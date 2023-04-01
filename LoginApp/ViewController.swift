@@ -18,18 +18,24 @@ final class LoginViewController: UIViewController {
     }
 
 
-    @IBAction func logInButtonTapped() {
-       // guard let inputText = userNameTextField.text
-        let userNamePattern = "login"
-        let isUserNameValid = NSPredicate(format: "SELF MATCHES %@", userNamePattern).evaluate(with: userNameTextField)
-        if !isUserNameValid {
-            return
+    @IBAction private func logInButtonTapped() {
+        let inputLogin = userNameTextField.text
+        let inputPassword = passwordTextField.text
+        
+        let userNamePattern = "Admin"
+        let userPasswordPattern = "password"
+        
+        let isUserNameValid = NSPredicate(format: "SELF MATCHES %@", userNamePattern).evaluate(with: inputLogin)
+        let isUserPasswordValid = NSPredicate(format: "SELF MATCHES %@", userPasswordPattern).evaluate(with: inputPassword)
+        if !isUserNameValid || !isUserPasswordValid {
+            showAlert(withTitle: "Is it really you?! 🥹", andMessage: "Password or login not correct")
         }
+        showAlert(withTitle: "Welcome \(inputLogin ?? "")", andMessage: "Hello there!")
     }
     
     
     @IBAction private func promptLoginButtonPressed() {
-       showAlert(withTitle: "Just forgot your login? 😄", andMessage: "Your login is - login")
+       showAlert(withTitle: "Just forgot your login? 😄", andMessage: "Your login is - Admin")
     }
     
     @IBAction private func promptPasswordButtonPressed() {
@@ -41,7 +47,9 @@ final class LoginViewController: UIViewController {
     
      private func showAlert(withTitle title: String, andMessage message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-         let okAction = UIAlertAction(title: "OK", style: .default)
+         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+             self.passwordTextField.text = ""
+         }
          alert.addAction(okAction)
         present(alert, animated: true)
     }
