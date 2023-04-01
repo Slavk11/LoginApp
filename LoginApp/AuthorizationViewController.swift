@@ -7,17 +7,20 @@
 
 import UIKit
 
-final class LoginViewController: UIViewController {
+final class AuthorizationViewController: UIViewController {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-       
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        userNameTextField.text = ""
+        passwordTextField.text = ""
     }
-
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let userProfileVC = segue.destination as? UserProfileViewController else {return}
+        userProfileVC.message = "Welcome, \(userNameTextField.text ?? "")!"
+   }
+    
     @IBAction private func logInButtonTapped() {
         let inputLogin = userNameTextField.text
         let inputPassword = passwordTextField.text
@@ -30,9 +33,7 @@ final class LoginViewController: UIViewController {
         if !isUserNameValid || !isUserPasswordValid {
             showAlert(withTitle: "Is it really you?! 🥹", andMessage: "Password or login not correct")
         }
-        showAlert(withTitle: "Welcome \(inputLogin ?? "")", andMessage: "Hello there!")
     }
-    
     
     @IBAction private func promptLoginButtonPressed() {
        showAlert(withTitle: "Just forgot your login? 😄", andMessage: "Your login is - Admin")
@@ -41,9 +42,6 @@ final class LoginViewController: UIViewController {
     @IBAction private func promptPasswordButtonPressed() {
         showAlert(withTitle: "Is it really you?! 🥹", andMessage: "Ok... Your password is - password")
     }
-    
-    
-    
     
      private func showAlert(withTitle title: String, andMessage message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
