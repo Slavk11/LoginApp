@@ -42,17 +42,17 @@ final class AuthorizationViewController: UIViewController {
         }
     }
     
+    @IBAction private func unwind(for segue: UIStoryboardSegue) {
+        userNameTextField.text = ""
+        passwordTextField.text = ""
+    }
+    
     @IBAction private func promptLoginButtonPressed() {
         showAlert(withTitle: "Just forgot your login?", andMessage: "Your login is - Admin")
     }
     
     @IBAction private func promptPasswordButtonPressed() {
         showAlert(withTitle: "Just forgot your password?", andMessage: "Ok... Your password is - password")
-    }
-    
-    @IBAction private func unwind(for segue: UIStoryboardSegue) {
-        userNameTextField.text = ""
-        passwordTextField.text = ""
     }
     
     private func showAlert(withTitle title: String, andMessage message: String) {
