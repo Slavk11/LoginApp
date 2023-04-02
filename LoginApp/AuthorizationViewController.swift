@@ -24,7 +24,9 @@ final class AuthorizationViewController: UIViewController {
         userProfileVC.greetingMessage = "Welcome, \(userNameTextField.text ?? "")!"
     }
     
-   //test
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
     @IBAction private func unwind(for segue: UIStoryboardSegue) {
         userNameTextField.text = ""
