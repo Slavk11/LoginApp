@@ -28,11 +28,6 @@ final class AuthorizationViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-    @IBAction private func unwind(for segue: UIStoryboardSegue) {
-        userNameTextField.text = ""
-        passwordTextField.text = ""
-    }
-    
     @IBAction private func logInButtonTapped() {
         let inputLogin = userNameTextField.text
         let inputPassword = passwordTextField.text
@@ -53,6 +48,11 @@ final class AuthorizationViewController: UIViewController {
     
     @IBAction private func promptPasswordButtonPressed() {
         showAlert(withTitle: "Just forgot your password?", andMessage: "Ok... Your password is - password")
+    }
+    
+    @IBAction private func unwind(for segue: UIStoryboardSegue) {
+        userNameTextField.text = ""
+        passwordTextField.text = ""
     }
     
     private func showAlert(withTitle title: String, andMessage message: String) {
