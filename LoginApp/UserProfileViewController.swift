@@ -9,13 +9,13 @@ import UIKit
 
 final class UserProfileViewController: UIViewController {
 
-    @IBOutlet var greetingMessage: UILabel!
-    var message: String!
+    @IBOutlet var greetingLabel: UILabel!
+    var greetingMessage: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        greetingMessage.text = message
+        greetingLabel.text = greetingMessage
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.view.bounds
