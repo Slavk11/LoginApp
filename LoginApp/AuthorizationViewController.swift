@@ -11,9 +11,12 @@ final class AuthorizationViewController: UIViewController {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
+    private let user = "Alex"
+    private let password = "Password"
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let userProfileVC = segue.destination as? UserProfileViewController else {return}
-        userProfileVC.greetingMessage = "Welcome, \(userNameTextField.text ?? "")!"
+        userProfileVC.user = user
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
