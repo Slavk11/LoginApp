@@ -58,16 +58,48 @@
 		791D4A4C29D72FC800272BCF /* LoginApp */ = {
 			isa = PBXGroup;
 			children = (
-				791D4A4D29D72FC800272BCF /* AppDelegate.swift */,
-				791D4A4F29D72FC800272BCF /* SceneDelegate.swift */,
-				791D4A5129D72FC800272BCF /* AuthorizationViewController.swift */,
-				79098C9229D80690006F59AA /* UserProfileViewController.swift */,
-				791D4A5329D72FC800272BCF /* Main.storyboard */,
+				792EA08D29DC91BD0052B8F0 /* ViewControllers */,
+				792EA08C29DC91690052B8F0 /* Storyboards */,
+				792EA08E29DC91E70052B8F0 /* Models */,
+				792EA08B29DC8F360052B8F0 /* App */,
 				791D4A5629D72FCA00272BCF /* Assets.xcassets */,
-				791D4A5829D72FCA00272BCF /* LaunchScreen.storyboard */,
-				791D4A5B29D72FCA00272BCF /* Info.plist */,
 			);
 			path = LoginApp;
+			sourceTree = "<group>";
+		};
+		792EA08B29DC8F360052B8F0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				791D4A4D29D72FC800272BCF /* AppDelegate.swift */,
+				791D4A4F29D72FC800272BCF /* SceneDelegate.swift */,
+				791D4A5B29D72FCA00272BCF /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		792EA08C29DC91690052B8F0 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				791D4A5329D72FC800272BCF /* Main.storyboard */,
+				791D4A5829D72FCA00272BCF /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		792EA08D29DC91BD0052B8F0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				791D4A5129D72FC800272BCF /* AuthorizationViewController.swift */,
+				79098C9229D80690006F59AA /* UserProfileViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		792EA08E29DC91E70052B8F0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +326,7 @@
 				DEVELOPMENT_TEAM = MLZMX2BSJ3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LoginApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "About Me";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -325,6 +358,7 @@
 				DEVELOPMENT_TEAM = MLZMX2BSJ3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LoginApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "About Me";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
