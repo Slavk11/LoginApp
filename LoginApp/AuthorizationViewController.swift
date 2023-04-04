@@ -11,14 +11,6 @@ final class AuthorizationViewController: UIViewController {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
-    @IBOutlet var logInButton: UIButton!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        logInButton.layer.cornerRadius = 5
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let userProfileVC = segue.destination as? UserProfileViewController else {return}
         userProfileVC.greetingMessage = "Welcome, \(userNameTextField.text ?? "")!"
@@ -64,4 +56,4 @@ final class AuthorizationViewController: UIViewController {
         present(alert, animated: true)
     }
 }
-//test
+
