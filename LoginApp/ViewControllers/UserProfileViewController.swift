@@ -8,7 +8,7 @@
 import UIKit
 
 final class UserProfileViewController: UIViewController {
-
+    
     @IBOutlet var greetingLabel: UILabel!
     
     var user = ""
@@ -28,7 +28,7 @@ final class UserProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         greetingLabel.text = "Welcome, \(user)!"
         
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
