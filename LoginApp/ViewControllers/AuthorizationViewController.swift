@@ -10,13 +10,19 @@ import UIKit
 final class AuthorizationViewController: UIViewController {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
+  
+    private let userData = User.getUser()
     
-    private let user = "Alex"
-    private let password = "Password"
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        userNameTextField.text = userData.login
+        passwordTextField.text = userData.password
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let userProfileVC = segue.destination as? UserProfileViewController else {return}
-        userProfileVC.user = user
+        userProfileVC.user = userData.login
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -25,7 +31,7 @@ final class AuthorizationViewController: UIViewController {
     }
     
     @IBAction private func logInButtonTapped() {
-        guard userNameTextField.text == user, passwordTextField.text == password else {
+        guard userNameTextField.text == userData.login, passwordTextField.text == userData.password else {
             showAlert(
                 title: "Invalid login or password",
                 message: "Please, enter correct login and password",
@@ -43,8 +49,8 @@ final class AuthorizationViewController: UIViewController {
     
     @IBAction func forgotRegisterData(_ sender: UIButton) {
         sender.tag == 0
-        ? showAlert(title: "Just forgot your login?", message: "Your login is \(user)")
-        : showAlert(title: "Just forgot your password?", message: "Your password is \(password) 😉")
+        ? showAlert(title: "Just forgot your login?", message: "Your login is \(userData.login)")
+        : showAlert(title: "Just forgot your password?", message: "Your password is \(userData.password) 😉")
     }
     
     
