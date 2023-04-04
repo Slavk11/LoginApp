@@ -25,17 +25,15 @@ final class AuthorizationViewController: UIViewController {
     }
     
     @IBAction private func logInButtonTapped() {
-        let inputLogin = userNameTextField.text
-        let inputPassword = passwordTextField.text
-        
-        let userNamePattern = "Admin"
-        let userPasswordPattern = "password"
-        
-        let isUserNameValid = NSPredicate(format: "SELF MATCHES %@", userNamePattern).evaluate(with: inputLogin)
-        let isUserPasswordValid = NSPredicate(format: "SELF MATCHES %@", userPasswordPattern).evaluate(with: inputPassword)
-        if !isUserNameValid || !isUserPasswordValid {
-            showAlert(withTitle: "Is it really you?! 🥹", andMessage: "Login or password not correct")
+        guard userNameTextField.text == user, passwordTextField.text == password else {
+            showAlert(
+                title: "Invalid login or password",
+                message: "Please, enter correct login and password",
+                textField: passwordTextField
+            )
+            return
         }
+        performSegue(withIdentifier: "showWelcomeVC", sender: nil)
     }
     
     @IBAction private func unwind(for segue: UIStoryboardSegue) {
@@ -43,15 +41,14 @@ final class AuthorizationViewController: UIViewController {
         passwordTextField.text = ""
     }
     
-    @IBAction private func promptLoginButtonPressed() {
-        showAlert(withTitle: "Just forgot your login?", andMessage: "Your login is - Admin")
+    @IBAction func forgotRegisterData(_ sender: UIButton) {
+        sender.tag == 0
+        ? showAlert(title: "Just forgot your login?", message: "Your login is \(user)")
+        : showAlert(title: "Just forgot your password?", message: "Your password is \(password) 😉")
     }
     
-    @IBAction private func promptPasswordButtonPressed() {
-        showAlert(withTitle: "Just forgot your password?", andMessage: "Ok... Your password is - password")
-    }
     
-    private func showAlert(withTitle title: String, andMessage message: String) {
+    private func showAlert(title: String, message: String, textField: UITextField? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
             self.passwordTextField.text = ""
