@@ -27,9 +27,9 @@ final class AuthorizationViewController: UIViewController {
         viewControllers.forEach { viewController in
             if let homeVC = viewController as? UserProfileViewController {
                 homeVC.user = userData.login
-                homeVC.person = userData.person.personalName
+                homeVC.personName = userData.person.personName
+                homeVC.personSurName = userData.person.personSurname
             } else if let aboutMeVC = viewController as? InformationViewController {
-                aboutMeVC.fullName = userData.person.personalName
                 aboutMeVC.name = userData.person.personName
                 aboutMeVC.surname = userData.person.personSurname
                 aboutMeVC.company = userData.person.personCompanyName
