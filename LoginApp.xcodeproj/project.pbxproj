@@ -15,6 +15,7 @@
 		791D4A5729D72FCA00272BCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 791D4A5629D72FCA00272BCF /* Assets.xcassets */; };
 		791D4A5A29D72FCA00272BCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 791D4A5829D72FCA00272BCF /* LaunchScreen.storyboard */; };
 		792EA09029DCA09E0052B8F0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792EA08F29DCA09E0052B8F0 /* User.swift */; };
+		7935C2FA29DDDF6A00D46093 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7935C2F929DDDF6A00D46093 /* InformationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		791D4A5929D72FCA00272BCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		791D4A5B29D72FCA00272BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		792EA08F29DCA09E0052B8F0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7935C2F929DDDF6A00D46093 /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				791D4A5129D72FC800272BCF /* AuthorizationViewController.swift */,
 				79098C9229D80690006F59AA /* UserProfileViewController.swift */,
+				7935C2F929DDDF6A00D46093 /* InformationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				791D4A4E29D72FC800272BCF /* AppDelegate.swift in Sources */,
 				792EA09029DCA09E0052B8F0 /* User.swift in Sources */,
 				791D4A5029D72FC800272BCF /* SceneDelegate.swift in Sources */,
+				7935C2FA29DDDF6A00D46093 /* InformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

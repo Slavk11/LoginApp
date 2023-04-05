@@ -21,8 +21,21 @@ final class AuthorizationViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let userProfileVC = segue.destination as? UserProfileViewController else {return}
-        userProfileVC.user = userData.login
+        guard let tabBarController = segue.destination as? UITabBarController else { return }
+        guard let viewControllers = tabBarController.viewControllers else { return }
+        
+        viewControllers.forEach { viewController in
+            if let homeVC = viewController as? UserProfileViewController {
+                homeVC.user = userData.login
+                homeVC.person = userData.person.personalName
+            } else if let aboutMeVC = viewController as? InformationViewController {
+                aboutMeVC.fullName = userData.person.personalName
+                aboutMeVC.name = userData.person.personName
+                aboutMeVC.surname = userData.person.personSurname
+                aboutMeVC.company = userData.person.personCompanyName
+                aboutMeVC.department = userData.person.personDepartmentName
+            }
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -63,4 +76,5 @@ final class AuthorizationViewController: UIViewController {
         present(alert, animated: true)
     }
 }
+
 

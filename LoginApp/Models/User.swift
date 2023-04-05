@@ -11,13 +11,24 @@ struct User {
     let person: Person
     
     static func getUser() -> User {
-     User(login: "Alex", password: "Password", person: Person(name: "FF", surname: "ff"))
+     User(login: "Alex", password: "Password", person: Person(
+        personalName: "Stanislav Sazonov",
+        personName: "Stanislav",
+        personSurname: "Sazonov",
+        personCompanyName: "Advanced clinical center",
+        personDepartmentName: "Research Laboratory "
+     )
+     )
     }
 }
 
 
 
 struct Person {
-    let name: String
-    let surname: String
+    let personalName: String
+    let personName: String
+    let personSurname: String
+    let personCompanyName: String
+    let personDepartmentName: String
+    
 }

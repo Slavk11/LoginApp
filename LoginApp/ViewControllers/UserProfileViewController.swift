@@ -11,7 +11,10 @@ final class UserProfileViewController: UIViewController {
     
     @IBOutlet var greetingLabel: UILabel!
     
+    @IBOutlet var ownerName: UILabel!
+    
     var user = ""
+    var person = ""
     
     private let primaryColor = UIColor(
         red: 210/255,
@@ -30,7 +33,7 @@ final class UserProfileViewController: UIViewController {
         super.viewDidLoad()
         
         greetingLabel.text = "Welcome, \(user)!"
-        
+        ownerName.text = "My name is \(person)"
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
         
     }
