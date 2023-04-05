@@ -66,7 +66,6 @@ final class AuthorizationViewController: UIViewController {
         : showAlert(title: "Just forgot your password?", message: "Your password is \(userData.password) 😉")
     }
     
-    
     private func showAlert(title: String, message: String, textField: UITextField? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in

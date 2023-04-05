@@ -17,7 +17,6 @@ final class InformationViewController: UIViewController {
     
     @IBOutlet var profilePicture: UIImageView!
     
-    
     var fullName = ""
     var name = ""
     var surname = ""
