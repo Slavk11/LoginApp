@@ -85,13 +85,13 @@
         <!--Home-->
         <scene sceneID="BBt-gD-Gq8">
             <objects>
-                <viewController id="8bk-38-Ubq" customClass="UserProfileViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8bk-38-Ubq" customClass="WelcomeViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sQw-rh-yjI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="QIR-y7-04s">
-                                <rect key="frame" x="3" y="121" width="314.5" height="198.5"/>
+                                <rect key="frame" x="3" y="121" width="314.5" height="128.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07h-6L-RXo">
                                         <rect key="frame" x="0.0" y="0.0" width="314.5" height="43"/>
@@ -99,14 +99,8 @@
                                         <color key="textColor" red="0.9969310925" green="1" blue="0.95839291510000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My name is ...." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QuE-of-KEz">
-                                        <rect key="frame" x="81.5" y="83" width="151" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👋" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rC3-aG-QsV">
-                                        <rect key="frame" x="135.5" y="153" width="43" height="45.5"/>
+                                        <rect key="frame" x="135.5" y="83" width="43" height="45.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -138,7 +132,6 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="greetingLabel" destination="07h-6L-RXo" id="ji3-kT-vqd"/>
-                        <outlet property="ownerName" destination="QuE-of-KEz" id="dts-Yz-EzK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nYm-j2-boy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -146,7 +139,7 @@
             </objects>
             <point key="canvasLocation" x="94" y="799"/>
         </scene>
-        <!--About Me-->
+        <!--Information View Controller-->
         <scene sceneID="Sth-Yt-89Y">
             <objects>
                 <viewController id="QRF-Fb-iHM" customClass="InformationViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -155,19 +148,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="49" translatesAutoresizingMaskIntoConstraints="NO" id="WlE-pP-Hwp">
-                                <rect key="frame" x="65" y="20" width="190" height="443"/>
+                                <rect key="frame" x="65" y="112.5" width="190" height="359"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LlD-cs-Bqf">
-                                        <rect key="frame" x="0.0" y="0.0" width="69" height="35"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="self" translatesAutoresizingMaskIntoConstraints="NO" id="hbc-ch-o1T">
-                                        <rect key="frame" x="0.0" y="84" width="190" height="190"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="190" height="190"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JQa-DP-RSB">
-                                        <rect key="frame" x="0.0" y="323" width="48" height="120"/>
+                                        <rect key="frame" x="0.0" y="239" width="48" height="120"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZw-Ri-Nq1">
                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="24"/>
@@ -205,7 +192,6 @@
                             <constraint firstItem="WlE-pP-Hwp" firstAttribute="centerX" secondItem="YFX-wv-Mvt" secondAttribute="centerX" id="kWn-DS-nwk"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="About Me" image="person.circle.fill" catalog="system" id="T5O-pe-I2x"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="WTd-8J-1q5">
                         <barButtonItem key="rightBarButtonItem" title="Bio" id="0E0-ZX-7ks"/>
@@ -214,7 +200,6 @@
                     <connections>
                         <outlet property="companyName" destination="oMR-KM-gp6" id="RvL-bE-wun"/>
                         <outlet property="departmentName" destination="vt0-CT-a8T" id="beS-Za-gWM"/>
-                        <outlet property="profileFullName" destination="LlD-cs-Bqf" id="uWJ-kq-bWW"/>
                         <outlet property="profileName" destination="KZw-Ri-Nq1" id="k7I-UE-boY"/>
                         <outlet property="profilePicture" destination="hbc-ch-o1T" id="G2t-D2-htT"/>
                         <outlet property="profileSurname" destination="b0T-pq-HKw" id="MC2-gn-unU"/>
@@ -222,12 +207,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HZO-HS-Aq2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="847.5" y="798.59154929577471"/>
+            <point key="canvasLocation" x="1845" y="798.59154929577471"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Vbx-bs-seR">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="4ON-Ee-IMg" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="4ON-Ee-IMg" customClass="TabBarController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TlH-1r-7b9">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -236,12 +221,34 @@
                     </tabBar>
                     <connections>
                         <segue destination="8bk-38-Ubq" kind="relationship" relationship="viewControllers" id="LSq-md-lT3"/>
-                        <segue destination="QRF-Fb-iHM" kind="relationship" relationship="viewControllers" id="TlW-Vk-rkk"/>
+                        <segue destination="Scs-48-CjD" kind="relationship" relationship="viewControllers" id="TlW-Vk-rkk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NHC-t7-9z6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="847.5" y="1.056338028169014"/>
+        </scene>
+        <!--About Me-->
+        <scene sceneID="ILe-lc-q6T">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Scs-48-CjD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="About Me" image="person.circle.fill" catalog="system" id="T5O-pe-I2x"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="HD8-do-CYb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QRF-Fb-iHM" kind="relationship" relationship="rootViewController" id="FO8-kJ-HMz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ObB-UO-7R6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="847.5" y="798.59154929577471"/>
         </scene>
     </scenes>
     <resources>

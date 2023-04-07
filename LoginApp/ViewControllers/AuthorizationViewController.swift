@@ -11,31 +11,18 @@ final class AuthorizationViewController: UIViewController {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
   
-    private let userData = User.getUser()
+    private let user = User.getUser()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        userNameTextField.text = userData.login
-        passwordTextField.text = userData.password
+        userNameTextField.text = user.login
+        passwordTextField.text = user.password
     }
-    
+   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let tabBarController = segue.destination as? UITabBarController else { return }
-        guard let viewControllers = tabBarController.viewControllers else { return }
-        
-        viewControllers.forEach { viewController in
-            if let homeVC = viewController as? UserProfileViewController {
-                homeVC.user = userData.login
-                homeVC.personName = userData.person.personName
-                homeVC.personSurName = userData.person.personSurname
-            } else if let aboutMeVC = viewController as? InformationViewController {
-                aboutMeVC.name = userData.person.personName
-                aboutMeVC.surname = userData.person.personSurname
-                aboutMeVC.company = userData.person.personCompanyName
-                aboutMeVC.department = userData.person.personDepartmentName
-            }
-        }
+        guard let tabBarController = segue.destination as? TabBarController else { return }
+        tabBarController.user = user
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -44,7 +31,7 @@ final class AuthorizationViewController: UIViewController {
     }
     
     @IBAction private func logInButtonTapped() {
-        guard userNameTextField.text == userData.login, passwordTextField.text == userData.password else {
+        guard userNameTextField.text == user.login, passwordTextField.text == user.password else {
             showAlert(
                 title: "Invalid login or password",
                 message: "Please, enter correct login and password",
@@ -62,8 +49,8 @@ final class AuthorizationViewController: UIViewController {
     
     @IBAction func forgotRegisterData(_ sender: UIButton) {
         sender.tag == 0
-        ? showAlert(title: "Just forgot your login?", message: "Your login is \(userData.login)")
-        : showAlert(title: "Just forgot your password?", message: "Your password is \(userData.password) 😉")
+        ? showAlert(title: "Just forgot your login?", message: "Your login is \(user.login)")
+        : showAlert(title: "Just forgot your password?", message: "Your password is \(user.password) 😉")
     }
     
     private func showAlert(title: String, message: String, textField: UITextField? = nil) {

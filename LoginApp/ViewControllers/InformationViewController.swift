@@ -8,8 +8,8 @@
 import UIKit
 
 final class InformationViewController: UIViewController {
+    var user: User!
 
-    @IBOutlet var profileFullName: UILabel!
     @IBOutlet var profileName: UILabel!
     @IBOutlet var profileSurname: UILabel!
     @IBOutlet var companyName: UILabel!
@@ -17,23 +17,14 @@ final class InformationViewController: UIViewController {
     
     @IBOutlet var profilePicture: UIImageView!
     
-    var fullName = ""
-    var name = ""
-    var surname = ""
-    var company = ""
-    var department = ""
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        profilePicture.layer.masksToBounds = true
-        profilePicture.layer.cornerRadius = profilePicture.frame.width / 2
-        
-        profileFullName.text = "\(name) \(surname)"
-        profileName.text = "Name:  \(name)"
-        profileSurname.text = "Surname:  \(surname)"
-        companyName.text = "Company :  \(company)"
-        departmentName.text = "Department:  \(department)"
+        title = user.person.fullName
+        profileName.text = user.person.name
+        profileSurname.text = user.person.surname
+        companyName.text = "Company: \(user.person.job.title)"
+        departmentName.text = user.person.job.jobTitle
     }
 }
 
