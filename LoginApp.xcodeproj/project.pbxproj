@@ -17,6 +17,7 @@
 		792EA09029DCA09E0052B8F0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792EA08F29DCA09E0052B8F0 /* User.swift */; };
 		7935C2FA29DDDF6A00D46093 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7935C2F929DDDF6A00D46093 /* InformationViewController.swift */; };
 		79E7E8C729E06603009EBA7B /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7E8C629E06603009EBA7B /* TabBarController.swift */; };
+		79E7E8C929E150D9009EBA7B /* Extension + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7E8C829E150D9009EBA7B /* Extension + UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		792EA08F29DCA09E0052B8F0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7935C2F929DDDF6A00D46093 /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		79E7E8C629E06603009EBA7B /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		79E7E8C829E150D9009EBA7B /* Extension + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +69,9 @@
 				792EA08D29DC91BD0052B8F0 /* ViewControllers */,
 				792EA08C29DC91690052B8F0 /* Storyboards */,
 				792EA08E29DC91E70052B8F0 /* Models */,
+				79E7E8CA29E150F4009EBA7B /* Extensions */,
 				792EA08B29DC8F360052B8F0 /* App */,
-				791D4A5629D72FCA00272BCF /* Assets.xcassets */,
+				79E7E8CB29E15619009EBA7B /* Resources */,
 			);
 			path = LoginApp;
 			sourceTree = "<group>";
@@ -109,6 +112,22 @@
 				792EA08F29DCA09E0052B8F0 /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		79E7E8CA29E150F4009EBA7B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				79E7E8C829E150D9009EBA7B /* Extension + UIView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		79E7E8CB29E15619009EBA7B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				791D4A5629D72FCA00272BCF /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +205,7 @@
 				79098C9329D80690006F59AA /* WelcomeViewController.swift in Sources */,
 				791D4A4E29D72FC800272BCF /* AppDelegate.swift in Sources */,
 				792EA09029DCA09E0052B8F0 /* User.swift in Sources */,
+				79E7E8C929E150D9009EBA7B /* Extension + UIView.swift in Sources */,
 				79E7E8C729E06603009EBA7B /* TabBarController.swift in Sources */,
 				791D4A5029D72FC800272BCF /* SceneDelegate.swift in Sources */,
 				7935C2FA29DDDF6A00D46093 /* InformationViewController.swift in Sources */,

@@ -8,7 +8,13 @@
 import UIKit
 
 final class InformationViewController: UIViewController {
-    var user: User!
+    
+    @IBOutlet var photoImage: UIImageView! {
+        didSet {
+            photoImage.layer.cornerRadius = photoImage.frame.height / 2
+        }
+    }
+    
 
     @IBOutlet var profileName: UILabel!
     @IBOutlet var profileSurname: UILabel!
@@ -17,14 +23,20 @@ final class InformationViewController: UIViewController {
     
     @IBOutlet var profilePicture: UIImageView!
     
+    var user: User!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.addVerticalGradientLayer()
+        
+        photoImage.image = UIImage(named: user.person.photo)
+        
         title = user.person.fullName
-        profileName.text = user.person.name
-        profileSurname.text = user.person.surname
+        profileName.text = "Name: \(user.person.name)"
+        profileSurname.text = "Surname: \(user.person.surname)"
         companyName.text = "Company: \(user.person.job.title)"
-        departmentName.text = user.person.job.jobTitle
+        departmentName.text = "Department: \(user.person.job.jobTitle)"
     }
 }
 
