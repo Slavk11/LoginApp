@@ -22,6 +22,5 @@ final class UserBioViewController: UIViewController {
         title = "\(user.person.fullName)"
         
         view.addVerticalGradientLayer()
-        
     }
 }
