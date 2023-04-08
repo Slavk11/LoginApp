@@ -35,12 +35,17 @@ struct Person {
             name: "Stanislav",
             surname: "Sazonov",
             photo: "Stanislav",
-            bio: "About me",
+            bio: """
+                Hello! My name is Stanislav. I am interesting in technology and electronics.
+                I like Apple ecosystem, and I have a lot of Apple devices.
+                My dream is became a IOS developer and create a lot of useful applications for people.
+                I began to learn Swift from from 30.01.2023, let's take a look where it will go 😊
+                """,
             job: Company.getCompany()
         )
     }
 }
-    
+
 struct Company {
     let title: String
     let jobTitle: String

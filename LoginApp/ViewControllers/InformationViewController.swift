@@ -15,7 +15,7 @@ final class InformationViewController: UIViewController {
         }
     }
     
-
+    
     @IBOutlet var profileName: UILabel!
     @IBOutlet var profileSurname: UILabel!
     @IBOutlet var companyName: UILabel!
@@ -31,12 +31,16 @@ final class InformationViewController: UIViewController {
         view.addVerticalGradientLayer()
         
         photoImage.image = UIImage(named: user.person.photo)
-        
         title = user.person.fullName
         profileName.text = "Name: \(user.person.name)"
         profileSurname.text = "Surname: \(user.person.surname)"
         companyName.text = "Company: \(user.person.job.title)"
         departmentName.text = "Department: \(user.person.job.jobTitle)"
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let infoVC = segue.destination as? UserBioViewController else {return}
+        infoVC.user = user
     }
 }
 
